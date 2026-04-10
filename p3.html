@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Tech | Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --accent: #00f2ff;
+            --text: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navbar --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 20px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--accent); text-transform: uppercase; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { text-decoration: none; color: #fff; font-size: 0.9rem; font-weight: 400; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent); }
+
+        /* --- Hero --- */
+        .intro {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 10%;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+        }
+        .intro h1 { font-size: 4rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+        .intro span { color: var(--accent); }
+        .intro p { max-width: 800px; font-size: 1.2rem; color: #aaa; line-height: 1.8; }
+
+        /* --- Sliders --- */
+        .slider-section { height: 100vh; width: 100%; position: relative; overflow: hidden; background: #000; }
+        .slide-container { width: 100%; height: 100%; }
+        
+        .item {
+            width: 250px; height: 380px; position: absolute; top: 60%;
+            transform: translate(0, -50%); border-radius: 20px;
+            background-position: center; background-size: cover;
+            transition: 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        
+        .item:nth-child(1), .item:nth-child(2) {
+            top: 0; left: 0; transform: translate(0, 0); border-radius: 0; width: 100%; height: 100%;
+        }
+        
+        .item:nth-child(3) { left: 60%; }
+        .item:nth-child(4) { left: calc(60% + 280px); }
+        .item:nth-child(5) { left: calc(60% + 560px); }
+
+        .content {
+            position: absolute; top: 50%; left: 10%; width: 550px;
+            transform: translate(0, -50%); display: none; z-index: 10;
+            text-align: left;
+        }
+        .item:nth-child(2) .content { display: block; }
+        .content .name { font-size: 4.5rem; font-weight: 800; color: #fff; margin-bottom: 10px; text-transform: uppercase; }
+        .content .des { font-size: 1.2rem; color: #ddd; line-height: 1.5; background: rgba(0,0,0,0.4); padding: 10px; border-radius: 5px; }
+        
+        .nav-btns { position: absolute; bottom: 80px; left: 10%; z-index: 100; }
+        .nav-btns button {
+            width: 55px; height: 55px; border-radius: 50%; border: 1px solid #fff;
+            background: transparent; color: #fff; cursor: pointer; margin-right: 20px; transition: 0.3s;
+        }
+        .nav-btns button:hover { background: var(--accent); border-color: var(--accent); color: #000; }
+
+        /* --- Info Block --- */
+        .info-block { padding: 100px 15%; text-align: center; background: #080808; }
+        .info-block h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 25px; color: var(--accent); }
+        .info-block p { color: #888; font-size: 1.1rem; line-height: 1.7; }
+
+        footer { padding: 50px; text-align: center; border-top: 1px solid #222; color: #444; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">NADX.CODING</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#domains">Domains</a></li>
+        </ul>
+    </nav>
+
+    <section class="intro" id="home">
+        <h1>Mastering <span>code</span> starts here</h1>
+        <p>We design the future using the most powerful programming languages and the most innovative tech domains.</p>
+    </section>
+
+    <section class="info-block">
+        <h2>Core Programming Languages</h2>
+        <p>Tools we use to turn ideas into tangible digital experiences.</p>
+    </section>
+
+    <section class="slider-section" id="languages">
+        <div class="slide-container" id="slide-lang">
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
+                <div class="content">
+                    <div class="name">Python</div>
+                    <div class="des">The leading language for AI, data science, and fast prototyping.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80');">
+                <div class="content">
+                    <div class="name">JavaScript</div>
+                    <div class="des">The heartbeat of modern web development and interactive applications.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80');">
+                <div class="content">
+                    <div class="name">Java / C++</div>
+                    <div class="des">The foundation of high-performance systems, desktop apps, and game engines.</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-btns">
+            <button onclick="movePrev('slide-lang')"><i class="fas fa-chevron-left"></i></button>
+            <button onclick="moveNext('slide-lang')"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="info-block" style="background: #000;">
+        <h2>Technology Domains</h2>
+        <p>Explore the specialties that shape the digital world of tomorrow.</p>
+    </section>
+
+    <section class="slider-section" id="domains">
+        <div class="slide-container" id="slide-domain">
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80');">
+                <div class="content">
+                    <div class="name">AI & ML</div>
+                    <div class="des">Building smart systems that learn and solve complex challenges.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=80');">
+                <div class="content">
+                    <div class="name">Cybersecurity</div>
+                    <div class="des">Protecting digital assets and ensuring privacy in a connected world.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80');">
+                <div class="content">
+                    <div class="name">Web Tech</div>
+                    <div class="des">Creating global platforms that connect people and businesses.</div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-btns">
+            <button onclick="movePrev('slide-domain')"><i class="fas fa-chevron-left"></i></button>
+            <button onclick="moveNext('slide-domain')"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Tech World Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function moveNext(id) {
+            let items = document.querySelectorAll(`#${id} .item`);
+            document.getElementById(id).appendChild(items[0]);
+        }
+        function movePrev(id) {
+            let items = document.querySelectorAll(`#${id} .item`);
+            document.getElementById(id).prepend(items[items.length - 1]);
+        }
+    </script>
+</body>
+</html>
